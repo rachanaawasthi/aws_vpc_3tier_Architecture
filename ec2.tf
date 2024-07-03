@@ -13,18 +13,6 @@ resource "aws_instance" "web" {
   tags = {
     Name = "WebServer"
   }
-
-    provisioner "file" {
-    source = "./rachana.pem"
-    destination = "/home/ec2-user/rachana.pem"
-  
-    connection {
-      type = "ssh"
-      host = self.public_ip
-      user = "ec2-user"
-      private_key = "${file("./rachana.pem")}"
-    }  
-  }
 }
 
 resource "aws_instance" "db" {
