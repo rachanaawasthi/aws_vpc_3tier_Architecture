@@ -1,8 +1,3 @@
-
-locals{
-  rt_cidr_block = var.cidr_block_rt
-  
-}
 resource "aws_route_table" "rtb" {
   vpc_id = aws_vpc.main.id
 
